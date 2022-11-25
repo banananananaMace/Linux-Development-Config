@@ -1,0 +1,26 @@
+hi ColorColumn ctermbg=15
+hi CursorLine ctermbg=0
+hi Character ctermbg=220
+hi Condition cterm=NONE ctermbg=222
+hi Comment cterm=NONE ctermfg=5
+hi Constant cterm=NONE ctermfg=5
+hi LineNr ctermfg=245 ctermbg=NONE
+hi Normal ctermbg=NONE
+hi Macro ctermfg=6
+hi MatchParen ctermfg=0 ctermbg=226
+hi PreProc ctermfg=2
+hi PreCondit cterm=NONE ctermfg=6
+hi Search cterm=bold ctermfg=0 ctermbg=215
+hi SpecialChar cterm=NONE ctermfg=193
+hi SpecialKey cterm=NONE ctermfg=59
+hi Statement cterm=NONE ctermfg=222
+hi StorageClass ctermfg=9
+hi String ctermfg=218
+hi Structure ctermfg=9
+hi Type ctermfg=9
+hi Typedef ctermfg=9
+hi VertSpilt ctermfg=245 ctermbg=NONE
+" hi VISUAL ctermfg=1 ctermbg=249
+hi VISUAL ctermfg=198 ctermbg=NONE
+hi WhitespaceEOL ctermbg=red
+match WhitespaceEOL /\s\+$/
