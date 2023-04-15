@@ -40,6 +40,7 @@ set list
 " hi CursorLine cterm=underline ctermfg=NONE gui=underline guifg=black
 " set colorcolumn=80
 highlight ColorColumn ctermbg=red guibg=red
+set noswapfile
 set autoindent
 set autoread
 set autowrite
@@ -284,7 +285,7 @@ nmap <leader>sf :scs find f <C-R>=expand("<cfile>")<cr><cr>
 nmap <leader>si :scs find i <C-R>=expand("<cfile>")<cr><cr>
 nmap <leader>sd :scs find d <C-R>=expand("<cword>")<cr><cr>
 nmap <leader>zz <C-w>o
-nmap <leader>gs :GetScripts<cr>
+" nmap <leader>gs :GetScripts<cr>
 
 " lightline relativepath filename jellybeans ayu_mirage solarized
 let g:lightline = {
