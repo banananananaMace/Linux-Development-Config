@@ -276,14 +276,14 @@ nmap <F10> :call RunShell("Generate tags", "ctags -R --c++-kinds=+p --fields=+ia
 nmap <F11> :call RunShell("Generate filename tags", "~/.vim/shell/genfiletags.sh")<cr>
 nmap <F12> :call RunShell("Generate cscope", "cscope -Rb")<cr>:cs add cscope.out<cr>
 nmap <leader>sa :cs add cscope.out<cr>
-nmap <leader>ss :scs find s <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>sg :scs find g <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>sc :scs find c <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>st :scs find t <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>se :scs find e <C-R>=expand("<cword>")<cr><cr>
-nmap <leader>sf :scs find f <C-R>=expand("<cfile>")<cr><cr>
-nmap <leader>si :scs find i <C-R>=expand("<cfile>")<cr><cr>
-nmap <leader>sd :scs find d <C-R>=expand("<cword>")<cr><cr>
+nmap <leader>ss :vert scs find s <C-R>=expand("<cword>")<cr><cr>
+nmap <leader>sg :vert scs find g <C-R>=expand("<cword>")<cr><cr>
+nmap <leader>sc :vert scs find c <C-R>=expand("<cword>")<cr><cr>
+nmap <leader>st :vert scs find t <C-R>=expand("<cword>")<cr><cr>
+nmap <leader>se :vert scs find e <C-R>=expand("<cword>")<cr><cr>
+nmap <leader>sf :vert scs find f <C-R>=expand("<cfile>")<cr><cr>
+nmap <leader>si :vert scs find i <C-R>=expand("<cfile>")<cr><cr>
+nmap <leader>sd :vert scs find d <C-R>=expand("<cword>")<cr><cr>
 nmap <leader>zz <C-w>o
 " nmap <leader>gs :GetScripts<cr>
 
