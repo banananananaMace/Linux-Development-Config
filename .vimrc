@@ -68,6 +68,7 @@ set pumheight=10
 set ruler
 set scrolloff=5
 set showcmd
+set shortmess=atI
 set smartindent
 set smartcase
 set shiftwidth=8
