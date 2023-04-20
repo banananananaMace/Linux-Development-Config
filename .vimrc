@@ -314,24 +314,24 @@ nmap <leader>zz <C-w>o
 
 " lightline relativepath filename jellybeans ayu_mirage solarized
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
+	\ 'colorscheme': 'solarized',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ]
+	\ },
+	\ 'component': {
+	\   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+	\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+	\   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+	\ },
+	\ 'component_visible_condition': {
+	\   'readonly': '(&filetype!="help"&& &readonly)',
+	\   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+	\   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+	\ },
+	\ 'separator': { 'left': '⮀', 'right': '⮂' },
+	\ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+	\ }
 
 " auto-pairs
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"'}
