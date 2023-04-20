@@ -18,7 +18,11 @@ let g:MolokaiTransparent = 1
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 if has("gui_running")
 	set guifont=Consolas\ 14
-	color snazzy
+	let g:MolokaiTransparent = 0
+	vnoremap <C-c> "+y
+	vnoremap <C-x> "+x
+	vnoremap <C-v> "+gP
+	vnoremap <C-a> ggVG
 endif
 
 filetype on
