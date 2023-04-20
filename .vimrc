@@ -19,7 +19,10 @@ if has("gui_running")
 " 设置 gvim 显示字体
 	" set guifont=YaHei\ Consolas\ Hybrid\ 11.5
 	set guifont=Consolas\ 14
-	let g:SnazzyTransparent = 0
+	let g:MolokaiTransparent = 0
+	vnoremap <C-c> "+y
+	vnoremap <C-x> "+x
+	vnoremap <C-v> "+gP
 endif
 " To use VIM settings, out of VI compatible mode.
 set nocompatible
