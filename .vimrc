@@ -75,6 +75,7 @@ set number
 set pumheight=10
 "开启行号显示
 set ruler
+set shortmess=atI
 set scrolloff=5
 set showcmd
 set smartindent
