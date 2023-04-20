@@ -118,8 +118,18 @@ noremap <LEADER>v <C-W>v
 noremap <LEADER>d :%bd\|e#<CR>:bd#<CR>
 noremap <LEADER>q :wa!<CR>:tabo<CR>
 " noremap <LEADER>w <C-W>]
+" quickfix
 nmap <C-n> :cn<cr>
 nmap <C-p> :cp<cr>
+" :cc                显示详细错误信息 ( :help :cc )
+" :cp                跳到上一个错误 ( :help :cp )
+" :cn                跳到下一个错误 ( :help :cn )
+" :cl                列出所有错误 ( :help :cl )
+" :cw                如果有错误列表，则打开quickfix窗口 ( :help :cw )
+" :col               到前一个旧的错误列表 ( :help :col )
+" :cnew              到后一个较新的错误列表 ( :help :cnew )
+
+" buffer
 "nmap <C-N> :bn<cr>
 "nmap <C-P> :bp<cr>
 
@@ -315,6 +325,7 @@ let g:lightline = {
       \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
       \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
 
