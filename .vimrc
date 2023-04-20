@@ -61,6 +61,7 @@ set ignorecase
 set laststatus=2
 set list
 set listchars=tab:>-,trail:.
+set magic
 set mouse=a
 
 set number
@@ -292,29 +293,29 @@ nmap <leader>sf :vert scs find f <C-R>=expand("<cfile>")<cr><cr>
 nmap <leader>si :vert scs find i <C-R>=expand("<cfile>")<cr><cr>
 nmap <leader>sd :vert scs find d <C-R>=expand("<cword>")<cr><cr>
 nmap <leader>zz <C-w>o
-" nmap <leader>gs :GetScripts<cr>
+nmap <leader>gs :GetScripts<cr>
 
 " lightline relativepath filename jellybeans ayu_mirage solarized
 let g:lightline = {
-      \ 'colorscheme': 'ayu_mirage',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \   'separator': {'left': '⮀', 'right': '⮂',
-      \ },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
+	\ 'colorscheme': 'ayu_mirage',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ]
+	\ },
+	\ 'component': {
+	\   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+	\   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+	\   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+	\ },
+	\ 'component_visible_condition': {
+	\   'readonly': '(&filetype!="help"&& &readonly)',
+	\   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+	\   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+	\ },
+	\   'separator': {'left': '⮀', 'right': '⮂',
+	\ },
+	\ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+	\ }
 
 " auto-pairs
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"'}
@@ -323,3 +324,26 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"'}
 map <leader>f <Plug>(easymotion-bd-w)
 nmap <leader>f <Plug>(easymotion-overwin-w)
 
+autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()"
+""定义函数SetTitle，自动插入文件头
+func SetTitle()
+"如果文件类型为.sh文件
+if &filetype == 'sh'
+	call append(line("."), "\#!/bin/bash")
+endif
+if &filetype == 'cpp'
+	call append(line("."), "#include <iostream>")
+	call append(line(".")+1, "using namespace std;")
+	call append(line(".")+2, "")
+endif
+if &filetype == 'c'
+	call append(line("."),   "#include <stdio.h>")
+	call append(line(".")+1, "#include <ctype.h>")
+	call append(line(".")+2, "#include <string.h>")
+	call append(line(".")+3, "#include <stdlib.h>")
+	call append(line(".")+4, "#include <stdint.h>")
+	call append(line(".")+5, "")
+endif
+"新建文件后，自动定位到文件末尾
+autocmd BufNewFile * normal G
+endfunc
