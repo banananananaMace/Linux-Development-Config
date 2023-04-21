@@ -41,6 +41,11 @@ mv -f .* $HOME
 # zsh安装
 chmod 777 ~/.oh-my-zsh/tools/install.sh && sh -x ~/.oh-my-zsh/tools/install.sh
 
+# 插件安装
+echo "plugs are installing..." > log.txt
+vim log.txt -c "BundleInstall" -c "q" -c "q"
+rm -rf log.txt
+
 # vim fzf安装
 sh -x $/HOME/.vim/plugin/fzf/install.sh
 
