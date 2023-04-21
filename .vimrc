@@ -79,6 +79,7 @@ set smartcase
 set shiftwidth=8
 set softtabstop=8
 
+set ttyfast
 set termencoding=utf-8
 set textwidth=80
 set tabstop=8
@@ -171,7 +172,7 @@ let OpenDir=system("pwd")
 nmap <silent> <leader>cd :exe 'cd ' . OpenDir<cr>:pwd<cr>
 
 "PLUGIN Install:
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
