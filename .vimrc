@@ -342,20 +342,20 @@ autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()"
 func SetTitle()
 "如果文件类型为.sh文件
 if &filetype == 'sh'
-	call append(line("."), "\#!/bin/bash")
+	call setline(1, "\#\!/bin/bash")
 endif
-if &filetype == 'cpp'
-	call append(line("."), "#include <iostream>")
-	call append(line(".")+1, "using namespace std;")
-	call append(line(".")+2, "")
-endif
+" if &filetype == 'cpp'
+	" call setline(1, "#include <iostream>")
+	" call append(line("."), "using namespace std;")
+	" call append(line(".")+1, "")
+" endif
 if &filetype == 'c'
+	call setline(1, "#include <ctype.h>")
 	call append(line("."),   "#include <stdio.h>")
-	call append(line(".")+1, "#include <ctype.h>")
-	call append(line(".")+2, "#include <string.h>")
-	call append(line(".")+3, "#include <stdlib.h>")
-	call append(line(".")+4, "#include <stdint.h>")
-	call append(line(".")+5, "")
+	call append(line(".")+1, "#include <string.h>")
+	call append(line(".")+2, "#include <stdlib.h>")
+	call append(line(".")+3, "#include <stdint.h>")
+	call append(line(".")+4, "")
 endif
 "新建文件后，自动定位到文件末尾
 autocmd BufNewFile * normal G
