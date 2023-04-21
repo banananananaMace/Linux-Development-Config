@@ -1,5 +1,7 @@
 # 一 vim使用技巧
 
+### 1 快捷按键
+
 #### 1.1 quickfix操作
 
 | quick fix |                                                    |
@@ -46,9 +48,59 @@
 | `<C-w>o`            | `将当前window从tab分离,不创建新tab` |
 | `windo bd`          | `关闭当前tab所有缓冲区`             |
 
+## 2 插件安装
+
+#### 2.1 plug.vim(需科学上网)
+
+```
+ # mkdir -p ~/.vim/autoload
+ # curl -fLo ~/.vim/autoload/plug.vim \
+   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+   在.vimrc中添加
+   call plug#begin('~/.vim/plugged')
+   Plug '插件GitHub地址'
+   call plug#end()
+```
+
+完成后打开vim执行:PlugInstall即可开始安装插件;
+
+#### 2.2 bundle
+
+```
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" 另一种选择, 指定一个vundle安装插件的路径
+"call vundle#begin('~/some/path/here')
+" 让vundle管理插件版本,必须
+Plugin 'VundleVim/Vundle.vim'
+" 以下范例用来支持不同格式的插件安装.
+" 请将安装插件的命令放在vundle#begin和vundle#end之间.
+" Github上的插件
+" 格式为 Plugin '用户名/插件仓库名'
+Plugin 'tpope/vim-fugitive'
+" 来自 http://vim-scripts.org/vim/scripts.html 的插件
+" Plugin '插件名称' 实际上是 Plugin 'vim-scripts/插件仓库名' 只是此处的用户名可以省略
+Plugin 'L9'
+" 由Git支持但不再github上的插件仓库 Plugin 'git clone 后面的地址'
+Plugin 'git://git.wincent.com/command-t.git'
+" 本地的Git仓库(例如自己的插件) Plugin 'file:///+本地插件仓库绝对路径'
+Plugin 'file:///home/gmarik/path/to/plugin'
+" 插件在仓库的子目录中.
+" 正确指定路径用以设置runtimepath. 以下范例插件在sparkup/vim目录下
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" 安装L9，如果已经安装过这个插件，可利用以下格式避免命名冲突
+Plugin 'ascenator/L9', {'name': 'newL9'}
+call vundle#end()            " 必须
+```
+
+执行 :PluginInstall / BundleInstall安装
+
 # 二 oh-my-zsh安装
 
-### 1 联网安装法一
+#### 1 联网安装法一
 
 1.1 下载oh-my-zsh
 
@@ -63,14 +115,14 @@ chmod 777 tools/install.sh
 sh -x tools/install.sh
 ```
 
-### ~~2 联网安装法二~~
+#### ~~2 联网安装法二~~
 
 ```
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 sh -c "$(wget -O- https://gitee.com/pocmon/mirrors/raw/master/tools/install.sh)"
 ```
 
-### 3 离线安装
+#### 3 离线安装
 
 下载完Linux-Development-Config后,修改.oh-my-zsh/tools/install.sh脚本, 删除与 setup_ohmyzsh 有关的函数定义及调用及if [ -d "$ZSH" ]; then判断,如图所示
 ![image](https://user-images.githubusercontent.com/82626291/233510700-dbeb2d72-f874-44e6-b42e-01fa486612b0.png)
