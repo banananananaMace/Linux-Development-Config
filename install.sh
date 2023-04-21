@@ -8,16 +8,40 @@
 
 echo "it will take some time, please wait"
 if which apt-get >/dev/null; then
-	sudo apt-get install -y vim vim-gnome
-	sudo apt-get install -y python3 python-setuptools python-dev
-	sudo apt-get install -y ctags cscope xclip zsh
-	sudo apt-get install -y astyle git tmux gdb
+	sudo apt-get install -y vim
+	sudo apt-get install -y vim-gnome
+	sudo apt-get install -y python3
+	sudo apt-get install -y python-setuptools
+	sudo apt-get install -y python3-dev
+	sudo apt-get install -y ctags
+	sudo apt-get install -y cscope
+	sudo apt-get install -y xclip
+	sudo apt-get install -y zsh
+	sudo apt-get install -y astyle
+	sudo apt-get install -y git
+	sudo apt-get install -y tmux
+	sudo apt-get install -y gdb
+	sudo apt-get install -y gcc
+	sudo apt-get install -y cmake
+	sudo apt-get install -y g++
 
 elif which yum >/dev/null; then
-	sudo yum install -y vim vim-gnome
-	sudo yum install -y python3 python-setuptools python-dev
-	sudo yum install -y ctags cscope xclip zsh
-	sudo yum install -y astyle git tmux gdb
+	sudo yum install -y vim
+	sudo yum install -y python3
+	sudo yum install -y ctags
+	sudo yum install -y astyle
+	sudo yum install -y vim-gnome
+	sudo yum install -y python-setuptools
+	sudo yum install -y python3-dev
+	sudo yum install -y cscope
+	sudo yum install -y xclip
+	sudo yum install -y zsh
+	sudo yum install -y git
+	sudo yum install -y tmux
+	sudo yum install -y gdb
+	sudo yum install -y gcc
+	sudo yum install -y g++
+	sudo yum install -y cmake
 fi
 
 # Add HomeBrew support on  Mac OS
@@ -26,33 +50,37 @@ if which brew >/dev/null;then
 	brew install vim ctags git astyle
 fi
 
+
+sudo rm -rf /usr/local/bin/ctags
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
 
 # 复制配置文件
-mkdir backup
-mv -f ~/.zshrc backup
-mv -f ~/.tmux.conf backup
-mv -f ~/.vim backup
-mv -f ~/.vimrc backup
-mv -f ~/.oh-my-zsh backup
+sudo rm -rf backup && mkdir backup
+sudo mv -f ~/.zshrc backup
+sudo mv -f ~/.tmux.conf backup
+sudo mv -f ~/.vim backup
+sudo mv -f ~/.vimrc backup
+sudo mv -f ~/.oh-my-zsh backup
 
-mv -f .* $HOME
+sudo chmod 777 * -R
+cp -r .vim* ~
+cp -r .zsh* ~
+cp -r .fzf* ~
+cp -r .tmux.conf ~
+cp -r .oh-my-zsh ~
+
+# vim YCM安装
+python3 ~/.vim/plugged/YouCompleteMe/install.py
+python3 ~/.vim/plugged/YouCompleteMe/third_party/ycmd/build.py
+cp ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py ~
 
 # zsh安装
-chmod 777 ~/.oh-my-zsh/tools/install.sh && sh -x ~/.oh-my-zsh/tools/install.sh
+sh -x ~/.oh-my-zsh/tools/install.sh
 
 # 插件安装
 echo "plugs are installing..." > log.txt
-vim log.txt -c "BundleInstall" -c "q" -c "q"
+vim log.txt -c "PlugInstall" -c "q" -c "q"
 rm -rf log.txt
-
-# vim fzf安装
-sh -x $/HOME/.vim/plugin/fzf/install.sh
-
-# vim YCM安装
-python3 $/HOME/.vim/plugged/YouCompleteMe/install.py
-python3 $/HOME/.vim/plugged/YouCompleteMe/third_party/ycmd/build.py
-cp $/HOME/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py $HOME
 
 echo "done"
 
