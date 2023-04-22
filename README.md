@@ -47,6 +47,16 @@
 | `<C-w>T`            | `将当前window从tab分离,创建新tab`   |
 | `<C-w>o`            | `将当前window从tab分离,不创建新tab` |
 | `windo bd`          | `关闭当前tab所有缓冲区`             |
+## 2 源码安装
+```
+git clone git@gitee.com:wennan_w/vim82.git
+cd vim/src
+sudo ./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-python3interp=yes --with-python-config-dir=/usr/bin/python3.6m-x86_64-config --enable-perlinterp=yes --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope --prefix=/usr/local
+sudo make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
+sudo make install
+
+```
+注：需要将--with-python-config-dir=/usr/bin/python3.6m-x86_64-config替换为实际路径
 
 ## 2 插件安装
 
