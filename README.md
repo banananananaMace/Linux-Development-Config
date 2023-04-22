@@ -136,6 +136,15 @@ sh -c "$(wget -O- https://gitee.com/pocmon/mirrors/raw/master/tools/install.sh)"
 下载完Linux-Development-Config后,修改.oh-my-zsh/tools/install.sh脚本, 删除与 setup_ohmyzsh 有关的函数定义及调用及if [ -d "$ZSH" ]; then判断,如图所示
 ![image](https://user-images.githubusercontent.com/82626291/233510700-dbeb2d72-f874-44e6-b42e-01fa486612b0.png)
 
+# 三 python安装
+#### python 源码下载地址
+[`https://www.python.org/ftp/python/`]()
+```
+sudo ./configure --enable-optimizations --prefix=/usr/local/pytho
+sudo make && sudo make install
+sudo ln -s /usr/local/python/bin/python2.6 /usr/bin/python
+```
+
 # 附 参考指南
 
 [`https://blog.51cto.com/u_15301988/3081024`]()
