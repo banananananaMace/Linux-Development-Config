@@ -8,7 +8,7 @@
 
 echo "it will take some time, please wait"
 if which apt-get >/dev/null; then
-	sudo apt-get install -y vim
+	# sudo apt-get install -y vim
 	sudo apt-get install -y vim-gnome
 	sudo apt-get install -y python3
 	sudo apt-get install -y python-setuptools
@@ -26,7 +26,7 @@ if which apt-get >/dev/null; then
 	sudo apt-get install -y g++
 
 elif which yum >/dev/null; then
-	sudo yum install -y vim
+	# sudo yum install -y vim
 	sudo yum install -y python3
 	sudo yum install -y ctags
 	sudo yum install -y astyle
