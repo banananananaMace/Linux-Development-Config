@@ -19,7 +19,7 @@ if which apt-get >/dev/null; then
 	sudo apt-get install -y zsh
 	sudo apt-get install -y astyle
 	sudo apt-get install -y git
-	sudo apt-get install -y tmux
+	# sudo apt-get install -y tmux
 	sudo apt-get install -y gdb
 	sudo apt-get install -y gcc
 	sudo apt-get install -y cmake
@@ -37,7 +37,7 @@ elif which yum >/dev/null; then
 	sudo yum install -y xclip
 	sudo yum install -y zsh
 	sudo yum install -y git
-	sudo yum install -y tmux
+	# sudo yum install -y tmux
 	sudo yum install -y gdb
 	sudo yum install -y gcc
 	sudo yum install -y g++
