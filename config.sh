@@ -4,6 +4,11 @@
 cd ~/.vim/plugin/fzf/ && ./install
 cd ~
 
+# vim YCM安装
+python3 ~/.vim/plugged/YouCompleteMe/install.py
+python3 ~/.vim/plugged/YouCompleteMe/third_party/ycmd/build.py
+cp ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py ~
+
 # git 配置
 git config --add oh-my-zsh.hide-status 1
 git config --add oh-my-zsh.hide-dirty 1
