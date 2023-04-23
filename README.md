@@ -101,6 +101,8 @@ call vundle#end()            " 必须
 git clone git@gitee.com:wennan_w/vim82.git
 cd vim/src
 sudo ./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-python3interp=yes --with-python-config-dir=/usr/bin/python3.6m-x86_64-config --enable-perlinterp=yes --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope --prefix=/usr/local
+
+# sudo ./configure --with-features=huge --enable-python3interp=yes --with-python-config-dir=/usr/bin/python3.6m-x86_64-config --enable-perlinterp=yes --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope --prefix=/usr/local
 sudo make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
 sudo make install
 
@@ -140,7 +142,7 @@ sh -c "$(wget -O- https://gitee.com/pocmon/mirrors/raw/master/tools/install.sh)"
 #### python 源码下载地址
 [`https://www.python.org/ftp/python/`]()
 ```
-sudo ./configure --enable-optimizations --prefix=/usr/local/pytho
+sudo ./configure --enable-optimizations --prefix=/usr/local/python
 sudo make && sudo make install
 sudo ln -s /usr/local/python/bin/python2.6 /usr/bin/python
 ```
