@@ -148,10 +148,10 @@ sudo ln -s /usr/local/python/bin/python2.6 /usr/bin/python
 ```
 
 # 附 参考指南
+[`https://www.bbsmax.com/A/amd0ZPj6Jg/`]()
 
 [`https://blog.51cto.com/u_15301988/3081024`]()
 
 [`https://www.dreamxu.com/books/vim/plugin/ctrlp.html`]()
 
 [`https://www.cnblogs.com/ma6174/archive/2011/12/10/2283393.html`]()
-
