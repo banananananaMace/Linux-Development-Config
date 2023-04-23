@@ -32,7 +32,7 @@ elif which yum >/dev/null; then
 	sudo yum install -y astyle
 	sudo yum install -y vim-gnome
 	sudo yum install -y python-setuptools
-	sudo yum install -y python3-dev
+	sudo yum install -y python3-devel
 	sudo yum install -y cscope
 	sudo yum install -y xclip
 	sudo yum install -y zsh
@@ -54,6 +54,9 @@ fi
 sudo rm -rf /usr/local/bin/ctags
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
 
+# 打上oh-my-zsh离线安装补丁
+git am -3 0001-offline-patch.patch
+
 # 复制配置文件
 sudo rm -rf backup && mkdir backup
 sudo mv -f ~/.zshrc backup
@@ -69,18 +72,15 @@ cp -r .fzf* ~
 cp -r .tmux.conf ~
 cp -r .oh-my-zsh ~
 
-# vim YCM安装
-python3 ~/.vim/plugged/YouCompleteMe/install.py
-python3 ~/.vim/plugged/YouCompleteMe/third_party/ycmd/build.py
-cp ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py ~
-
-# zsh安装
-sh -x ~/.oh-my-zsh/tools/install.sh
 
 # 插件安装
 echo "plugs are installing..." > log.txt
 vim log.txt -c "PlugInstall" -c "q" -c "q"
 rm -rf log.txt
+
+# zsh安装
+sh -x ~/.oh-my-zsh/tools/install.sh
+
 
 echo "done"
 
