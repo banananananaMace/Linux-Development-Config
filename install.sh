@@ -50,6 +50,15 @@ if which brew >/dev/null;then
 	brew install vim ctags git astyle
 fi
 
+# tmux源码安装
+echo "tmux 安装中，请稍等........\n"
+sh -x tmux/install.sh
+echo "tmux 安装完成，请查看日志........\n"
+
+# vim源码安装
+echo "vim 安装中，请稍等........\n"
+sh -x install_vim.sh
+echo "vim 安装完成，请查看日志........\n"
 
 sudo rm -rf /usr/local/bin/ctags
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
@@ -71,7 +80,6 @@ cp -r .zsh* ~
 cp -r .fzf* ~
 cp -r .tmux.conf ~
 cp -r .oh-my-zsh ~
-
 
 # 插件安装
 echo "plugs are installing..." > log.txt
