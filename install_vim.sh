@@ -15,7 +15,7 @@ sudo yum install -y libncurses5-devel libgnome2-devel libgnomeui-devel libgtk2.0
 fi
 
 
-git clone git@gitee.com:wennan_w/vim82.git ~
+git clone git@gitee.com:banananaMace/vim82.git ~
 cd ~/vim*/src
 sudo ./configure --with-features=huge --enable-python3interp=yes --with-python-config-dir=/usr/bin/python3.6m-x86_64-config -enable-gui=gtk2 --enable-cscope --prefix=/usr/local
 # VIMRUNTIMEDIR syntax.vim 等依赖文件安装，需要与/usr/local/share/vim/路径下的文件名一致

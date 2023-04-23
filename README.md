@@ -98,7 +98,7 @@ call vundle#end()            " 必须
 执行 :PluginInstall / BundleInstall安装
 ## 3 源码安装
 ```
-git clone git@gitee.com:wennan_w/vim82.git
+git clone git@gitee.com:banananaMace/vim82.git
 cd vim/src
 sudo ./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-python3interp=yes --with-python-config-dir=/usr/bin/python3.6m-x86_64-config --enable-perlinterp=yes --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope --prefix=/usr/local
 
