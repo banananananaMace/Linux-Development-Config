@@ -18,7 +18,7 @@ if which apt-get >/dev/null; then
 	sudo apt-get install -y xclip
 	sudo apt-get install -y zsh
 	sudo apt-get install -y astyle
-	sudo apt-get install -y git
+	# sudo apt-get install -y git
 	# sudo apt-get install -y tmux
 	sudo apt-get install -y gdb
 	sudo apt-get install -y gcc
@@ -36,7 +36,7 @@ elif which yum >/dev/null; then
 	sudo yum install -y cscope
 	sudo yum install -y xclip
 	sudo yum install -y zsh
-	sudo yum install -y git
+	# sudo yum install -y git
 	# sudo yum install -y tmux
 	sudo yum install -y gdb
 	sudo yum install -y gcc
@@ -49,19 +49,19 @@ if which brew >/dev/null;then
 	echo "You are using HomeBrew tool"
 	brew install vim ctags git astyle
 fi
+# git源码安装
+echo "git 安装中，请稍等........\n"
+sh -x git/install_git.sh
 
 # tmux源码安装
 echo "tmux 安装中，请稍等........\n"
 sh -x tmux/install.sh
-echo "tmux 安装完成，请查看日志........\n"
 
 # vim源码安装
 echo "vim 安装中，请稍等........\n"
-sh -x install_vim.sh
-echo "vim 安装完成，请查看日志........\n"
+sh -x vim/install_vim.sh
 
-sudo rm -rf /usr/local/bin/ctags
-sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
+sudo ln -sf /usr/bin/ctags /usr/local/bin/ctags
 
 # 打上oh-my-zsh离线安装补丁
 git am -3 0001-offline-patch.patch
