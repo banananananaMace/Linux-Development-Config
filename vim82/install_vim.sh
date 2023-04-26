@@ -2,14 +2,14 @@
 
 # 彻底卸载vim
 if which apt-get >/dev/null; then
-sudo apt-get autoremove -y vim vim-common vim-tiny vim-runtime gvim
+sudo apt-get remove --purge vim vim-tiny vim-common vim-runtime gvim vim-common vim-gui-common vim-nox
 elif which yum >/dev/null; then
 sudo yum remove -y vim-runtime vim-common.x86_64 vim-filesystem.noarch vim-X11.x86_64 gvim vim-clustershell
 fi
 
 # 安装依赖库
 if which apt-get >/dev/null; then
-sudo apt-get install -y libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial gvim
+sudo apt-get install -y libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial gvim lua5.1 liblua5.1-dev libperl-dev
 elif which yum >/dev/null; then
 sudo yum install -y libncurses5-devel libgnome2-devel libgnomeui-devel libgtk2.0-devel libatk1.0-devel libcairo2-devel libx11-devel libxpm-devel libxpm-devel libxt-devel python3-devel ruby-devel mercurialel gvim
 fi
