@@ -66,7 +66,7 @@ sh -x install_tmux.sh
 
 # vim源码安装
 echo "vim 安装中，请稍等........\n"
-cd ${cur_dir}/vim82
+cd ${cur_dir}/vim_*
 sh -x install_vim.sh
 
 #cargo安装
