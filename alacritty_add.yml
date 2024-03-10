@@ -13,3 +13,5 @@ Copy and rename OpenConsole.exe to C:\Windows\System32\conhost.exe
 Reopen your alacrity and open wsl then tmux, you can enjoy~
 
 BTW, please make sure you keep winpty_backend: false in alacrity config.
+
+执行alacritty migrate将yml转换为TOML文件

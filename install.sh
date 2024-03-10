@@ -24,6 +24,8 @@ if which apt-get >/dev/null; then
 	sudo apt-get install -y gcc
 	sudo apt-get install -y cmake
 	sudo apt-get install -y g++
+	sudo apt-get install -y libevent-dev
+	sudo apt-get install -y libncurses5-dev
 
 elif which yum >/dev/null; then
 	# sudo yum install -y vim
@@ -55,7 +57,7 @@ sh -x git/install_git.sh
 
 # tmux源码安装
 echo "tmux 安装中，请稍等........\n"
-sh -x tmux/install.sh
+sh -x tmux/install_tmux.sh
 
 # vim源码安装
 echo "vim 安装中，请稍等........\n"
@@ -64,7 +66,7 @@ sh -x vim/install_vim.sh
 sudo ln -sf /usr/bin/ctags /usr/local/bin/ctags
 
 # 打上oh-my-zsh离线安装补丁
-git am -3 0001-offline-patch.patch
+# git am -3 0001-offline-patch.patch
 
 # 复制配置文件
 sudo rm -rf backup && mkdir backup

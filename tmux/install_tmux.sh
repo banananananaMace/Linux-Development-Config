@@ -33,8 +33,8 @@ sudo tar -xzvf tmux-3.0a.tar.gz -C /usr/bin
 # sudo yum install libevent -y
 
 #tmux
-sudo apt install -y libevent-dev
-sudo apt install -y libncurses5-dev
+sudo apt-get install -y libevent-dev
+sudo apt-get install -y libncurses5-dev
 
 cd /usr/bin/tmux*
 sudo ./configure --prefix=/usr/bin
