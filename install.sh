@@ -53,7 +53,7 @@ if which brew >/dev/null;then
 fi
 # git源码安装
 echo "git 安装中，请稍等........\n"
-sh -x git/install_git.sh
+sh -x git_2.34.1/install_git.sh
 
 # tmux源码安装
 echo "tmux 安装中，请稍等........\n"
