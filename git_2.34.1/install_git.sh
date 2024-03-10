@@ -7,6 +7,8 @@ if which apt-get >/dev/null; then
 	sudo apt-get install -y zlib1g-dev
 	sudo apt-get install -y libcurl4-openssl-dev
 	sudo apt-get install -y libexpat1-dev
+	sudo apt-get install -y git-gui
+	sudo apt-get install -y gettext
 
 elif which yum >/dev/null; then
 	sudo yum install -y install libcurl-devel
