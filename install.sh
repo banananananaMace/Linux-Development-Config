@@ -61,7 +61,11 @@ sh -x tmux/install_tmux.sh
 
 # vim源码安装
 echo "vim 安装中，请稍等........\n"
-sh -x vim/install_vim.sh
+sh -x vim82/install_vim.sh
+
+#cargo安装
+echo "cargo 安装中，请稍等........\n"
+sh -x cargo_1.76.0/install_cargo.sh
 
 sudo ln -sf /usr/bin/ctags /usr/local/bin/ctags
 
