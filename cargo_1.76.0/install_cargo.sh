@@ -34,7 +34,7 @@ echo "已成功将 cargo 源修改为清华源。"
 # 安装 alacritty 其他依赖
 sudo apt-get install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 
-cd alacritty && cargo build --release
+cd ../alacritty && cargo build --release
 target_dir=$(pwd)
 # 创建桌面图标
 if [ -f "${target_dir}/target/release/alacritty" ]; then
