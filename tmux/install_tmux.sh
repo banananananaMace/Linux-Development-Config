@@ -17,7 +17,7 @@
 # sudo tar -xzvf libevent-2.1.11-stable.tar.gz -C ${install_path}
 # sudo tar -xzvf ncurses-6.2.tar.gz -C ${install_path}
 # sudo tar -xzvf tmux-3.0a.tar.gz -C ${install_path}
-sudo tar -xzvf tmux-3.0a.tar.gz -C /usr/bin
+sudo tar -xzvf tmux-3.0a.tar.gz -C ./
 
 #ncurses
 # cd ${install_path}/ncur*
@@ -36,9 +36,12 @@ sudo tar -xzvf tmux-3.0a.tar.gz -C /usr/bin
 sudo apt-get install -y libevent-dev
 sudo apt-get install -y libncurses5-dev
 
-cd /usr/bin/tmux*
-sudo ./configure --prefix=/usr/bin
+cd tmux*
+sudo ./configure
 sudo make && sudo make install
 #CPPFLAGS="-I/my/path/tmux_depend//include -I/my/path/tmux_depend//include/ncurses" LDFLAGS="-static -L/my/path/tmux_depend//include -L/my/path/tmux_depend//include/ncurses -L/my/path/tmux_depend//lib"
+
+# tmux_path=$(whereis tmux | awk '{print $2}')
+# sudo ln -sf "$tmux_path" /usr/bin/tmux
 
 tmux source ~/.tmux.conf
