@@ -5,6 +5,7 @@
 # Created Time: 2023年04月21日 星期五 09时28分15秒
 #########################################################################
 #!/bin/bash
+set -x
 
 echo "it will take some time, please wait"
 if which apt-get >/dev/null; then
@@ -21,9 +22,9 @@ if which apt-get >/dev/null; then
 	# sudo apt-get install -y git
 	# sudo apt-get install -y tmux
 	sudo apt-get install -y gdb
-	sudo apt-get install -y gcc
+	# sudo apt-get install -y gcc
 	sudo apt-get install -y cmake
-	sudo apt-get install -y g++
+	# sudo apt-get install -y g++
 	sudo apt-get install -y libevent-dev
 	sudo apt-get install -y libncurses5-dev
 
@@ -51,21 +52,32 @@ if which brew >/dev/null;then
 	echo "You are using HomeBrew tool"
 	brew install vim ctags git astyle
 fi
+
+cur_dir=$(pwd)
 # git源码安装
 echo "git 安装中，请稍等........\n"
-sh -x git_2.34.1/install_git.sh
+cd ${cur_dir}/git_2.34.1
+sh -x install_git.sh
 
 # tmux源码安装
 echo "tmux 安装中，请稍等........\n"
-sh -x tmux_3.0/install_tmux.sh
+cd ${cur_dir}/tmux_3.0
+sh -x install_tmux.sh
 
 # vim源码安装
 echo "vim 安装中，请稍等........\n"
-sh -x vim82/install_vim.sh
+cd ${cur_dir}/vim82
+sh -x install_vim.sh
 
 #cargo安装
 echo "cargo 安装中，请稍等........\n"
-sh -x cargo_1.76.0/install_cargo.sh
+cd ${cur_dir}/cargo_*
+sh -x install_cargo.sh
+
+#gcc安装
+echo "cargo 安装中，请稍等........\n"
+cd ${cur_dir}/gcc*
+sh -x install_gcc.sh
 
 sudo ln -sf /usr/bin/ctags /usr/local/bin/ctags
 
@@ -79,6 +91,8 @@ sudo mv -f ~/.tmux.conf backup
 sudo mv -f ~/.vim backup
 sudo mv -f ~/.vimrc backup
 sudo mv -f ~/.oh-my-zsh backup
+
+cd ${cur_dir}
 
 sudo chmod 777 * -R
 cp -r .vim* ~
@@ -94,7 +108,4 @@ rm -rf log.txt
 
 # zsh安装
 sh -x ~/.oh-my-zsh/tools/install.sh
-
-
-echo "done"
 
