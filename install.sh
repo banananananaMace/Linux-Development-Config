@@ -57,7 +57,7 @@ sh -x git_2.34.1/install_git.sh
 
 # tmux源码安装
 echo "tmux 安装中，请稍等........\n"
-sh -x tmux/install_tmux.sh
+sh -x tmux_3.0/install_tmux.sh
 
 # vim源码安装
 echo "vim 安装中，请稍等........\n"
